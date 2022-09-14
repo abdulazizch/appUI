@@ -26,7 +26,7 @@
   <div class="main-wrapper">
     <div class="home">
       
-      <div id="snackbar">Data Saved</div>
+      <div class="d-block" id="snackbar">Data Saved</div>
 
       <div class="" id="dashboard">
         <div class="login_info" id="login_info" style="margin-right: 0px;">
@@ -277,33 +277,33 @@
           </button>
         </div>
         <div class="modal-body">
-          <div id="useredit2" style="display: flex;flex-direction: row ; margin-bottom: 10px;">
+          <div id="useredit2">
 
-            <div class="col-12 col-md-6 col-lg-4">
-              <span >ID</span>
-              <span id="user_id" ></span>
+            <div class="col-12 col-md-6 col-lg-4 my-2">
+              <label for="" class="form-label">ID:</label>
+              <span id="user_id" class="txt-primary user-id" ></span>
             </div>
 
 
-            <div class="col-12 col-md-6 col-lg-4">
+            <div class="col-12 col-md-6 col-lg-4 my-2">
               <label for="">USER ID</label>
               <input class="form-control font-weight-bold" placeholder="Name"
                 id="userId" type="text" />
             </div>
 
-            <div class="col-12 col-md-6 col-lg-4">
+            <div class="col-12 col-md-6 col-lg-4 my-2">
               <label for="">Password</label>
               <input  class="form-control font-weight-bold" placeholder="Name"
                 id="password" type="text" />
             </div>
 
-            <div class="col-12 col-md-6 col-lg-4">
+            <div class="col-12 col-md-6 col-lg-4 my-2">
               <label for="">Pin token</label>
               <input  class="form-control font-weight-bold" placeholder="Name"
                 id="isActive" type="text" />
             </div>
 
-            <div class="col-12 col-md-6 col-lg-4">
+            <div class="col-12 col-md-6 col-lg-4 my-2">
               <label for="">BROKER</label>
               <!--<input style="margin-right: 0.5rem;width: auto;" class="form-control font-weight-bold" placeholder="Name"-->
               <!--id="broker" type="text" />-->
@@ -312,19 +312,19 @@
                 <option value="angel">angel</option>
               </select>
             </div>
-            <div class="col-12 col-md-6 col-lg-4">
+            <div class="col-12 col-md-6 col-lg-4 my-2">
               <label for="" class="form-label">API</label>
               <input  class="form-control font-weight-bold" placeholder="Name"
                 id="api" type="text" />
             </div>
 
-            <div class="col-12 col-md-6 col-lg-4">
+            <div class="col-12 col-md-6 col-lg-4 my-2">
               <label for="">SEC</label>
               <input class="form-control font-weight-bold" placeholder="Name"
                 id="sec" type="text" />
             </div>
 
-            <div class="col-12 col-md-6 col-lg-4">
+            <div class="col-12 col-md-6 col-lg-4 my-2">
               <label for="">LOTS</label>
               <input class="form-control font-weight-bold" placeholder="Name"
                 id="lots" type="text" />
@@ -333,11 +333,11 @@
 
 
           </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal"
-              onclick="togelModel('userEditMOdel')">Close</button>
-            <button type="button" class="btn btn-primary" onclick="saveuserData()">Save changes</button>
-          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal"
+            onclick="togelModel('userEditMOdel')">Close</button>
+          <button type="button" class="btn primary-btn" onclick="saveuserData()">Save changes</button>
         </div>
       </div>
 
