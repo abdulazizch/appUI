@@ -24,42 +24,44 @@
 
 <body>
   <div class="main-wrapper">
-    <div class="home">
+    <div class="home col-md-10 col-12 mx-auto">
       
       <div class="d-block" id="snackbar">Data Saved</div>
 
       <div class="" id="dashboard">
         <div class="login_info" id="login_info" style="margin-right: 0px;">
-          <div class="login_info1 pt-90" id="login_info1">
+          <div class="login_info1 pt-90 pt-md-110" id="login_info1">
 
-            <div class="fixed-header top-header section-header py-2 pb-3">
-              <h3 class="text-center">USER INFO</h3>
-              <div class="headersn d-flex flex-column align-items-centers">
-                <div class="text-center">
+            <div class="fixed-header top-header section-header py-2 pb-3 row m-0 align-items-center">
+              <h3 class="text-center col-12 col-md-6">USER INFO</h3>
+              <div class="headersn col-12 col-md-6 d-flex flex-column align-items-centers">
+                <div class="text-center mt-md-2">
                   <span>BOT STATUS</span>
-                  <span id="bot_status" class="p-1 bg-danger text-white">INACTIVE</span>
+                  <span id="bot_status" class="p-1 px-md-3 bg-danger bot-status-badge text-white">INACTIVE</span>
                 </div>
-                <div class="mx-auto mt-1">
-                  <button type="button" class="btn btn-sm btn-success " onclick="bot_status('RUNNING')" id="start">START</button>
-                  <button type="button" class="btn btn-sm btn-warning" onclick="bot_status('PAUSED')" id="pause">PAUSE</button>
-                  <button type="button" class="btn btn-sm btn-danger" onclick="bot_status('STOPPED')" id="stoped">STOP</button>
+                <div class="mx-auto mt-1 mt-md-3">
+                  <button type="button" class="btn btn-sm btn-success mx-1 " onclick="bot_status('RUNNING')" id="start">START</button>
+                  <button type="button" class="btn btn-sm btn-warning mx-1" onclick="bot_status('PAUSED')" id="pause">PAUSE</button>
+                  <button type="button" class="btn btn-sm btn-danger mx-1" onclick="bot_status('STOPPED')" id="stoped">STOP</button>
                 </div>
 
 
               </div>
             </div>
 
-            <div class="row m-0 mb-5 mt-3 px-2">
+            <div class="row m-0 mb-5 mt-3 mt-md-4 px-2">
 
               <div class="col-12 col-sm-6 col-md-4 my-2">
                 <label for="" class="form-label">FUTURE</label>
                 <select name="indexx" id="futur" class="form-control">
                 </select>
               </div>
+
               <div class="col-12 col-sm-6 col-md-4 my-2">
                 <label for="" class="form-label">EXPIRY</label>
                 <select name="expiry" id="expiry" class="form-control"></select>
               </div>
+
               <div class="col-12 col-sm-6 col-md-4 my-2">
                 <label for="" class="form-label">CANDLE TIME</label>
                 <select name="candel_time" id="candelTime" class="form-control">
@@ -86,23 +88,28 @@
                 <label for="" class="form-label">SL POINTS</label>
                 <input class="form-control font-weight-bold" placeholder="" id="slPoints" type="text" />
               </div>
+
               <div class="col-6 col-sm-6 col-md-4 my-2">
                 <label for="" class="form-label">TGT POINTS</label>
                 <input class="form-control font-weight-bold" placeholder="" id="tgtPoints"type="text" />
               </div>
+
               <div class="col-6 col-sm-6 col-md-4 my-2">
                 <label for="" class="form-label">Trail SL POINTS</label>
                 <input class="form-control font-weight-bold" placeholder="" id="trailSlPoints" type="text" />
               </div>
+
               <div class="col-6 col-sm-6 col-md-4 my-2">
                 <label for="" class="form-label">RETRACE POINTS</label>
                 <input class="form-control font-weight-bold" placeholder="" id="retracementPoints" type="text" />
 
               </div>
+
               <div class="col-6 col-sm-6 col-md-4 my-2">
                 <label for="" class="form-label">START TIME</label>
                 <input class="form-control font-weight-bold" placeholder="" id="startTime" type="text" />
               </div>
+
               <div class="col-6 col-sm-6 col-md-4 my-2">
                 <label for="" class="form-label">SQ OFF TIME</label>
                 <input class="form-control font-weight-bold" placeholder="" id="sqOffTime" type="text" />
@@ -137,7 +144,7 @@
                 </select>
               </div>
 
-              <div class="col-12 col-sm-6 col-md-4 my-2 mx-auto" id="saveButton" style="align-items: center;">
+              <div class="col-12 col-sm-6 col-md-6 my-2 mx-auto" id="saveButton" style="align-items: center;">
                 <button type="button" class="w-100 btn primary-btn"
                   onclick="save_user_config()" id="save">Save</button>
               </div>
@@ -174,9 +181,11 @@
               </div>
 
               <div class="col-12 my-2">
-                <button type="button" class="w-100 btn primary-btn" 
-                  onclick="placeInstantOrder()">Place Order
-                </button>
+                <div class="col-md-6 mx-auto">
+                  <button type="button" class="w-100 btn primary-btn" 
+                    onclick="placeInstantOrder()">Place Order
+                  </button>
+                </div>
               </div>
 
 
@@ -190,7 +199,7 @@
               </div>
 
 
-              <div class="col-12 d-flex">
+              <div class="col-12 d-flex justify-content-center">
                 <div class="me-2">
                   <a type="button" class="clear-btn btn btn-secondary" href="/delPos">Clear Positions</a>
                 </div>
@@ -202,14 +211,14 @@
               </div>
             </div>
 
-
-
           </div>
-
-
 
         </div>
 
+      </div>
+
+      <div class="divider col-10 mx-auto mb-5">
+        <hr>
       </div>
 
       <div class="my-3 px-2 overflow-hidden h-auto"  id="active-orders">
@@ -277,37 +286,36 @@
           </button>
         </div>
         <div class="modal-body">
-          <div id="useredit2">
+          <div id="useredit2" class="row m-0">
 
-            <div class="col-12 col-md-6 col-lg-4 my-2">
+            <div class="col-12">
               <label for="" class="form-label">ID:</label>
               <span id="user_id" class="txt-primary user-id" ></span>
             </div>
 
-
             <div class="col-12 col-md-6 col-lg-4 my-2">
-              <label for="">USER ID</label>
+              <label for="" class="form-label">USER ID</label>
               <input class="form-control font-weight-bold" placeholder="Name"
                 id="userId" type="text" />
             </div>
 
             <div class="col-12 col-md-6 col-lg-4 my-2">
-              <label for="">Password</label>
+              <label for="" class="form-label">Password</label>
               <input  class="form-control font-weight-bold" placeholder="Name"
                 id="password" type="text" />
             </div>
 
             <div class="col-12 col-md-6 col-lg-4 my-2">
-              <label for="">Pin token</label>
+              <label for="" class="form-label">Pin token</label>
               <input  class="form-control font-weight-bold" placeholder="Name"
                 id="isActive" type="text" />
             </div>
 
             <div class="col-12 col-md-6 col-lg-4 my-2">
-              <label for="">BROKER</label>
+              <label for="" class="form-label">BROKER</label>
               <!--<input style="margin-right: 0.5rem;width: auto;" class="form-control font-weight-bold" placeholder="Name"-->
               <!--id="broker" type="text" />-->
-              <select id="broker">
+              <select id="broker" class="form-control">
                 <option value="zerodha">zerodha</option>
                 <option value="angel">angel</option>
               </select>
@@ -319,13 +327,13 @@
             </div>
 
             <div class="col-12 col-md-6 col-lg-4 my-2">
-              <label for="">SEC</label>
+              <label for="" class="form-label">SEC</label>
               <input class="form-control font-weight-bold" placeholder="Name"
                 id="sec" type="text" />
             </div>
 
             <div class="col-12 col-md-6 col-lg-4 my-2">
-              <label for="">LOTS</label>
+              <label for="" class="form-label">LOTS</label>
               <input class="form-control font-weight-bold" placeholder="Name"
                 id="lots" type="text" />
             </div>

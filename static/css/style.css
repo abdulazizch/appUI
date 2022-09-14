@@ -61,10 +61,7 @@
 #saveButton{
     margin-left: 0% !important;
 }
-.btn-sm{
-    line-height: 0.4 !important;
-    font-size: 12px !important;
-}
+
 .headersn{
     flex-direction: column !important;
     min-width: 250px;
@@ -200,8 +197,18 @@ html {
     color: var(--primary-color);
 }
 .btn-sm{
-    padding: 7px 10px;
+    padding: 8px 12px;
+    line-height: 0.4 !important;
+    font-size: 12px !important;
 }
+@media only screen and (min-width: 768px){
+    .btn-sm{
+        line-height: 0.4 !important;
+        font-size: 13px !important;
+        padding: 12px 18px;
+    }
+}
+
 .pt-80{
     padding-top: 80px;
 }
@@ -211,9 +218,18 @@ html {
 .pt-100{
     padding-top: 100px;
 }
+
 .pt-110{
     padding-top: 110px;
 }
+@media only screen and (min-width:768px) {
+    .pt-md-100{
+      padding-top: 100px;
+    } 
+    .pt-md-110{
+        padding-top: 110px;
+    }
+ }
 .content{
     height: 100%;
     margin:0;
@@ -455,9 +471,9 @@ thead tr {
     position: relative;
     top: 0;
     top: 0;
-    left: 260px;
+    /* left: 260px; */
+    left: 0;
     height: 100vh;
-    width: calc(100% - 260px);
     min-width: 250px;
     background-color: var(--body-color);
     transition: var(--tran-05);
@@ -887,7 +903,9 @@ textarea,input:focus,select:focus, .form-control:focus, .form-control:active{
   .top-header.fixed span{
     color: #f2f2f2;
   }
-
+  .bot-status-badge{
+    border-radius: 5px;
+  }
   @keyframes stickyAnimation{
     from{
         top: -150px;
@@ -897,7 +915,7 @@ textarea,input:focus,select:focus, .form-control:focus, .form-control:active{
     }
   }
   .section-header h3{
-    font-size: 18px;
+    font-size: 24px;
     font-weight: 600;
     color: var(--primary-color);
   }
@@ -916,14 +934,23 @@ textarea,input:focus,select:focus, .form-control:focus, .form-control:active{
     color: #fff;
   }
 
-  .modal-body{
-    height: 55vh;
-    overflow-y: scroll;
+  @media only screen and (max-width:500px){
+    .section-header h3{
+        font-size: 18px;
+      }
+    .modal-body{
+        height: 55vh;
+        overflow-y: scroll;
+      }
   }
   .modal-dialog{
     max-width: 90%;
     /* max-height: 90vh; */
     margin: auto;
+  }
+
+  .modal-dialog .form-control{
+    background-color: #fff !important;
   }
   .btn-close-modal span{
     font-size: 22px;
