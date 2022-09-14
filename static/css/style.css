@@ -917,7 +917,7 @@ textarea,input:focus,select:focus, .form-control:focus, .form-control:active{
   }
 
   .modal-body{
-    height: 64vh;
+    height: 55vh;
     overflow-y: scroll;
   }
   .modal-dialog{
