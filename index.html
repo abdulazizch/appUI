@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<!-- Coding by CodingLab | www.codinglabweb.com -->
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+
+  <link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="./static/css/style.css" />
+  <script src="./static/js/home.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <div class="home">
+      
+      <div id="snackbar">Data Saved</div>
+
+      <div class="" id="dashboard">
+        <div class="login_info" id="login_info" style="margin-right: 0px;">
+          <div class="login_info1 pt-90" id="login_info1">
+
+            <div class="fixed-header top-header section-header py-2 pb-3">
+              <h3 class="text-center">USER INFO</h3>
+              <div class="headersn d-flex flex-column align-items-centers">
+                <div class="text-center">
+                  <span>BOT STATUS</span>
+                  <span id="bot_status" class="p-1 bg-danger text-white">INACTIVE</span>
+                </div>
+                <div class="mx-auto mt-1">
+                  <button type="button" class="btn btn-sm btn-success " onclick="bot_status('RUNNING')" id="start">START</button>
+                  <button type="button" class="btn btn-sm btn-warning" onclick="bot_status('PAUSED')" id="pause">PAUSE</button>
+                  <button type="button" class="btn btn-sm btn-danger" onclick="bot_status('STOPPED')" id="stoped">STOP</button>
+                </div>
+
+
+              </div>
+            </div>
+
+            <div class="row m-0 mb-5 mt-3 px-2">
+
+              <div class="col-12 col-sm-6 col-md-4 my-2">
+                <label for="" class="form-label">FUTURE</label>
+                <select name="indexx" id="futur" class="form-control">
+                </select>
+              </div>
+              <div class="col-12 col-sm-6 col-md-4 my-2">
+                <label for="" class="form-label">EXPIRY</label>
+                <select name="expiry" id="expiry" class="form-control"></select>
+              </div>
+              <div class="col-12 col-sm-6 col-md-4 my-2">
+                <label for="" class="form-label">CANDLE TIME</label>
+                <select name="candel_time" id="candelTime" class="form-control">
+                  <option value="minute">minute</option>
+                  <option value="3minute">3minute</option>
+                  <option value="5minute">5minute</option>
+                  <option value="10minute">10minute</option>
+                  <option value="15minute">15minute</option>
+                  <option value="30minute">30minute</option>
+                  <option value="60minute">60minute</option>
+                </select>
+              </div>
+
+              <div class="col-12 col-sm-6 col-md-4 my-2">
+                <label for="" class="form-label">Product</label>
+                <select name="product" id="productt" class="form-control">
+                  <option value="MIS">MIS</option>
+                  <option value="CNC">CNC</option>
+                  <option value="NRML">NRML</option>
+                </select>
+              </div>
+
+              <div class="col-6 col-sm-6 col-md-4 my-2">
+                <label for="" class="form-label">SL POINTS</label>
+                <input class="form-control font-weight-bold" placeholder="" id="slPoints" type="text" />
+              </div>
+              <div class="col-6 col-sm-6 col-md-4 my-2">
+                <label for="" class="form-label">TGT POINTS</label>
+                <input class="form-control font-weight-bold" placeholder="" id="tgtPoints"type="text" />
+              </div>
+              <div class="col-6 col-sm-6 col-md-4 my-2">
+                <label for="" class="form-label">Trail SL POINTS</label>
+                <input class="form-control font-weight-bold" placeholder="" id="trailSlPoints" type="text" />
+              </div>
+              <div class="col-6 col-sm-6 col-md-4 my-2">
+                <label for="" class="form-label">RETRACE POINTS</label>
+                <input class="form-control font-weight-bold" placeholder="" id="retracementPoints" type="text" />
+
+              </div>
+              <div class="col-6 col-sm-6 col-md-4 my-2">
+                <label for="" class="form-label">START TIME</label>
+                <input class="form-control font-weight-bold" placeholder="" id="startTime" type="text" />
+              </div>
+              <div class="col-6 col-sm-6 col-md-4 my-2">
+                <label for="" class="form-label">SQ OFF TIME</label>
+                <input class="form-control font-weight-bold" placeholder="" id="sqOffTime" type="text" />
+              </div>
+
+              <div class="col-12 col-sm-6 col-md-4 my-2">
+                <label for="" class="form-label">ATM +/-</label>
+                <input class="form-control font-weight-bold" placeholder="ATM =/-" id="atmpm" type="text" />
+              </div>
+
+              <div class="col-6 col-sm-6 col-md-4 my-2">
+                <label class="form-label">Max Re-Entry</label>
+                <input class="form-control font-weight-bold" placeholder="Max Re-Entry" id="maxReentry" type="text" />
+              </div>
+
+              <div class="col-6 col-sm-6 col-md-4 my-2">
+                <label for="" class="form-label">Re-Entry Today</label>
+                <input class="form-control font-weight-bold" placeholder="Re-Entry Today" id="reentryTook"
+                  type="text" />
+              </div>
+
+              <div class="col-12 col-sm-6 col-md-4 my-2">
+                <label for="" class="form-label">Both Side Entry</label>
+                <input class="form-control font-weight-bold" placeholder="Both Side Entry" id="both" type="text" />
+              </div>
+
+              <div class="col-12 col-sm-6 col-md-4 my-2">
+                <label for="" class="form-label">BUY OR SELL</label>
+                <select id="buyOrSell" class="form-control">
+                  <option value="BUY">BUY</option>
+                  <option value="SELL">SELL</option>
+                </select>
+              </div>
+
+              <div class="col-12 col-sm-6 col-md-4 my-2 mx-auto" id="saveButton" style="align-items: center;">
+                <button type="button" class="w-100 btn primary-btn"
+                  onclick="save_user_config()" id="save">Save</button>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="divider col-10 mx-auto my-3">
+            <hr>
+          </div>
+
+          <!-- instant order  -->
+          <div class="login_info1 mb-5 mt-4 px-2">
+            <div class="section-header">
+              <h3 class="text-center">Instant Order</h3>
+            </div>
+            <div class="headersn"></div>
+            <div class="row m-0">
+
+              <div class="col-12 col-md-6 my-2">
+                <label for="" class="form-label">Side</label>
+                <select name="instantSide" id="instantSide">
+                  <option value="CE">CE</option>
+                  <option value="PE">PE</option>
+                </select>
+              </div>
+
+              <div class="col-12 col-md-6 my-2">
+                <label for="" class="form-label">BUY OR SELL</label>
+                <select id="instantbos">
+                  <option value="BUY">BUY</option>
+                  <option value="SELL">SELL</option>
+                </select>
+              </div>
+
+              <div class="col-12 my-2">
+                <button type="button" class="w-100 btn primary-btn" 
+                  onclick="placeInstantOrder()">Place Order
+                </button>
+              </div>
+
+
+
+              <div class="column " style="align-items: center;">
+
+              </div>
+
+              <div class="column " style="align-items: center;">
+
+              </div>
+
+
+              <div class="col-12 d-flex">
+                <div class="me-2">
+                  <a type="button" class="clear-btn btn btn-secondary" href="/delPos">Clear Positions</a>
+                </div>
+
+                <div>
+                  <a type="button" class="clear-btn btn btn-secondary" href="resetreentry/all">Reset Entries</a>
+                </div>
+
+              </div>
+            </div>
+
+
+
+          </div>
+
+
+
+        </div>
+
+      </div>
+
+      <div class="my-3 px-2 overflow-hidden h-auto"  id="active-orders">
+        <div class="table-con table-responsive">
+          <table class="table styled-table table-bordered" id="orders_table">
+            <thead>
+              <tr>
+                <td style="min-width: 80px;">Time</td>
+                <td style="min-width: 50px;">Symbol</td>
+                <td style="min-width: 130px;">Product</td>
+                <td style="min-width: 60px;">Lots</td>
+                <td style="min-width: 120px;">Entry Price</td>
+                <td style="min-width: 80px;">High/Low/Exit</td>
+                <td style="min-width: 80px;">LTP</td>
+                <td style="min-width: 100px;">Status</td>
+              </tr>
+            </thead>
+            <tbody id="positions">
+  
+  
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+
+      <div class="my-3 mt-4 px-2 overflow-hidden h-auto"  id="usersTable">
+        <div class="add-user-btn-con mb-2 text-end">
+          <button type="button" class="btn btn-success add-user-btn ms-auto" onclick="addUser('new')">
+            Add User <i class="fa fa-plus ms-1"></i></button>
+        </div>
+        <div class="table-con table-responsive">
+          <table class="table styled-table table-bordered">
+            <thead>
+              <tr>
+                <td style="min-width:30px;">ID</td>
+                <td style="min-width:100px;">USER ID</td>
+                <td style="min-width:100px;">BROKER</td>
+                <td style="min-width:80px;">LOTS</td>
+                </td>
+              </tr>
+            </thead>
+            <tbody id="usersTableContent">
+  
+  
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- user model -->
+  <div class="modal fade" id="userEditMOdel" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div id="useredit1" class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Edit User</h5>
+          <button type="button" class="btn p-0 btn-close-modal" data-dismiss="modal" aria-label="Close"
+            onclick="togelModel('userEditMOdel')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div id="useredit2" style="display: flex;flex-direction: row ; margin-bottom: 10px;">
+
+            <div class="col-12 col-md-6 col-lg-4">
+              <span >ID</span>
+              <span id="user_id" ></span>
+            </div>
+
+
+            <div class="col-12 col-md-6 col-lg-4">
+              <label for="">USER ID</label>
+              <input class="form-control font-weight-bold" placeholder="Name"
+                id="userId" type="text" />
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+              <label for="">Password</label>
+              <input  class="form-control font-weight-bold" placeholder="Name"
+                id="password" type="text" />
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+              <label for="">Pin token</label>
+              <input  class="form-control font-weight-bold" placeholder="Name"
+                id="isActive" type="text" />
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+              <label for="">BROKER</label>
+              <!--<input style="margin-right: 0.5rem;width: auto;" class="form-control font-weight-bold" placeholder="Name"-->
+              <!--id="broker" type="text" />-->
+              <select id="broker">
+                <option value="zerodha">zerodha</option>
+                <option value="angel">angel</option>
+              </select>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+              <label for="" class="form-label">API</label>
+              <input  class="form-control font-weight-bold" placeholder="Name"
+                id="api" type="text" />
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+              <label for="">SEC</label>
+              <input class="form-control font-weight-bold" placeholder="Name"
+                id="sec" type="text" />
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+              <label for="">LOTS</label>
+              <input class="form-control font-weight-bold" placeholder="Name"
+                id="lots" type="text" />
+            </div>
+
+
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal"
+              onclick="togelModel('userEditMOdel')">Close</button>
+            <button type="button" class="btn btn-primary" onclick="saveuserData()">Save changes</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+
+  <script>
+    const body = document.querySelector("body"),
+      sidebar = body.querySelector("nav"),
+      toggle = body.querySelector(".toggle"),
+      searchBtn = body.querySelector(".search-box"),
+      modeSwitch = body.querySelector(".toggle-switch"),
+      modeText = body.querySelector(".mode-text");
+
+    toggle.addEventListener("click", () => {
+      sidebar.classList.toggle("close");
+      logo();
+    });
+
+
+
+    modeSwitch.addEventListener("click", () => {
+      body.classList.toggle("dark");
+
+      if (body.classList.contains("dark")) {
+        modeText.innerText = "Light mode";
+        // document.body.style.backgroundImage = "url('./l-b-bg.jpeg')";
+      } else {
+        modeText.innerText = "Dark mode";
+        // document.body.style.backgroundImage = "url('./bg-main.jpg')";
+      }
+    });
+
+
+
+    function logo() {
+      var x = document.getElementById("logo-bigger");
+      var y = document.getElementById("logo-small");
+      var ltps = document.getElementById("ltps");
+
+      if (x.style.display === "none") {
+        x.style.display = "block";
+        ltps.style.display = 'block';
+      } else {
+        x.style.display = "none";
+        ltps.style.display = 'none';
+      }
+      if (y.style.display === "none") {
+        y.style.display = "block";
+      } else {
+        y.style.display = "none";
+      }
+    }
+  </script>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    /* Create three equal columns that floats next to each other */
+    .column {
+      float: left;
+      width: 145px;
+      padding: 10px;
+      /* height: 300px; Should be removed. Only for demonstration */
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  </style>
+</body>
+
+</html>
