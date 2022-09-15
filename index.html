@@ -23,6 +23,17 @@
 </head>
 
 <body>
+
+  <div class="mode-toggle-btn col-3">
+    <div class="mode">
+      <i class="bx bx-moon icon moon"></i>
+      <i class="bx bx-sun icon sun"></i>
+      <!-- <div class="toggle-switch">
+        <span class="switch"></span>
+      </div> -->
+    </div>
+  </div>
+
   <div class="main-wrapper">
     <div class="home col-md-10 col-12 mx-auto">
       
@@ -34,6 +45,7 @@
 
             <div class="fixed-header top-header section-header py-2 pb-3 row m-0 align-items-center">
               <h3 class="text-center col-12 col-md-6">USER INFO</h3>
+
               <div class="headersn col-12 col-md-6 d-flex flex-column align-items-centers">
                 <div class="text-center mt-md-2">
                   <span>BOT STATUS</span>
@@ -356,32 +368,12 @@
 
   <script>
     const body = document.querySelector("body"),
-      sidebar = body.querySelector("nav"),
-      toggle = body.querySelector(".toggle"),
-      searchBtn = body.querySelector(".search-box"),
-      modeSwitch = body.querySelector(".toggle-switch"),
-      modeText = body.querySelector(".mode-text");
+      modeSwitch = body.querySelector(".mode-toggle-btn");
 
-    toggle.addEventListener("click", () => {
-      sidebar.classList.toggle("close");
+      modeSwitch.addEventListener("click", () => {
+      body.classList.toggle("dark");
       logo();
     });
-
-
-
-    modeSwitch.addEventListener("click", () => {
-      body.classList.toggle("dark");
-
-      if (body.classList.contains("dark")) {
-        modeText.innerText = "Light mode";
-        // document.body.style.backgroundImage = "url('./l-b-bg.jpeg')";
-      } else {
-        modeText.innerText = "Dark mode";
-        // document.body.style.backgroundImage = "url('./bg-main.jpg')";
-      }
-    });
-
-
 
     function logo() {
       var x = document.getElementById("logo-bigger");
@@ -403,26 +395,6 @@
     }
   </script>
 
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    /* Create three equal columns that floats next to each other */
-    .column {
-      float: left;
-      width: 145px;
-      padding: 10px;
-      /* height: 300px; Should be removed. Only for demonstration */
-    }
-
-    /* Clear floats after the columns */
-    .row:after {
-      content: "";
-      display: table;
-      clear: both;
-    }
-  </style>
 </body>
 
 </html>
